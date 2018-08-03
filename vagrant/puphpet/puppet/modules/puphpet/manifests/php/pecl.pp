@@ -17,10 +17,10 @@ define puphpet::php::pecl (
 
   $pecl = $::osfamily ? {
     'Debian' => {
-      'mongo' => 'mongodb',
+      'mongo' => 'mongo',
     },
     'Redhat' => {
-      'mongo' => 'mongodb',
+      'mongo' => 'mongo',
     }
   }
 

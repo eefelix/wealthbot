@@ -1,10 +1,19 @@
 # Force php5 version
+sudo update-alternatives --set php /usr/bin/php5.6
+sudo update-alternatives --set phar /usr/bin/phar5.6
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar5.6 
+sudo update-alternatives --set phpize /usr/bin/phpize5.6
+sudo update-alternatives --set php-config /usr/bin/php-config5.6
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 sudo apt-get purge -y php7.0-common
 sudo apt-get autoremove
-sudo apt-get install -y php5.6 php5-mongo php5-apcu php5-cli  php5-intl php5-imagick php5-mcrypt php5-curl
-
+sudo apt-get install -y php5.6
+#sudo bash -c "printf \"\\n\" | pecl install mongo"
+#sudo bash -c "echo \"extension=mongo.so\" >> /etc/php/5.6/cli/php.ini"
+sudo bash -c "printf \"\\n\" | pecl install mongodb"
+sudo bash -c "echo \"extension=mongodb.so\" >> /etc/php/5.6/cli/php.ini"
+sudo apt-get install -y php5-mongo php5-apcu php5-cli  php5-intl php5-imagick php5-mcrypt php5-curl
 
 sudo service apache2 restart
 
@@ -19,7 +28,9 @@ sudo a2dissite 10-default_vhost_443.conf
 sudo service apache2 reload
 
 #update dependencies
+sudo php5dismod xdebug && sudo apachectl -k graceful
 cd /srv/wealthbot
+export COMPOSER_PROCESS_TIMEOUT=4000
 composer clear-cache
 composer install --prefer-source
 
@@ -31,8 +42,10 @@ mongo < mongo_user.js
 mongo < mongo_user_test.js
 
 #clear cache
-app/console cache:clear --env=dev --no-debug
+sudo chmod -R 777 app/cache
 app/console cache:clear --env=prod --no-debug
+app/console cache:clear --env=dev --no-debug
+sudo rm -rf app/cache/*
 
 #setup db and load fixtures
 app/console doctrine:database:drop --force
@@ -43,5 +56,5 @@ app/console assetic:dump
 
 #warming up cache
 echo .... warming up cache ....
+#app/console cache:warmup --env=prod
 app/console cache:warmup --env=dev
-app/console cache:warmup --env=prod

@@ -107,7 +107,7 @@ if array_true($mongodb, 'install') {
     mongodb => $mongodb,
     apache  => $apache,
     nginx   => $nginx,
-    php     => $php
+    php    => 0
   }
 }
 

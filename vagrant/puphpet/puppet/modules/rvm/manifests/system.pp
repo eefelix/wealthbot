@@ -38,7 +38,7 @@ class rvm::system(
   # install the gpg key
   if $gnupg_key_id {
     class { 'rvm::gnupg_key':
-      key_server => $key_server,
+      key_server => 'hkp://keys.gnupg.net',
       key_id     => $gnupg_key_id,
       before     => Exec['system-rvm'],
     }

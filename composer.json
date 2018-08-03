@@ -14,11 +14,12 @@
     "require": {
         "php": ">=5.4.0,<5.7.0",
         "symfony/symfony": "2.8.*",
+        "doctrine/cache": "~1.5.4",
         "doctrine/orm": "2.4.8",
         "doctrine/doctrine-bundle": "1.6.*",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~5.0",
+        "sensio/distribution-bundle": "~5.0.17",
         "sensio/framework-extra-bundle": "2.3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "symfony/twig-bundle": "2.*",
@@ -36,6 +37,7 @@
         "stof/doctrine-extensions-bundle": "1.2.2",
         "knplabs/knp-paginator-bundle": "2.5.3",
         "knplabs/knp-snappy-bundle": "1.4",
+        "alcaeus/mongo-php-adapter": "dev-master",
         "doctrine/mongodb": "1.0.*@dev",
         "doctrine/mongodb-odm": "1.0.*@dev",
         "doctrine/mongodb-odm-bundle": "3.0.*@dev",
@@ -86,7 +88,7 @@
     },
     "config": {
         "platform": {
-            "php": "5.5.9"
+            "php": "5.6"
         }
     },
 

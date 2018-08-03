@@ -85,6 +85,7 @@ vagrantfile:
 server:
     install: '1'
     packages:
+        - pkg-config
         - libsasl2-dev
 
 users_groups:
@@ -296,7 +297,7 @@ ruby:
             version: 1.9.3
             gems:
                 - deep_merge
-                - activesupport
+                - activesupport@4.2.7.1
                 - vine
 python:
     install: '1'

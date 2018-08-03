@@ -115,9 +115,16 @@ define php::pecl::module (
         $new_version = ''
       }
 
-      $pecl_exec_command = $ensure ? {
-        present => "printf \"${auto_answer}\" | pecl -d preferred_state=${preferred_state} install ${name}${new_version} && pecl info ${name}",
-        absent  => "pecl uninstall -n ${name}",
+      if $name != 'mongo' {
+        $pecl_exec_command = $ensure ? {
+          present => "printf \"${auto_answer}\" | pecl -d preferred_state=${preferred_state} install ${name}${new_version} && pecl info ${name}",
+          absent  => "pecl uninstall -n ${name}",
+        }
+      } else {
+        $pecl_exec_command = $ensure ? {
+          present => "update-alternatives --set php /usr/bin/php5.6 && update-alternatives --set phar /usr/bin/phar5.6 && update-alternatives --set phar.phar /usr/bin/phar.phar5.6 && update-alternatives --set phpize /usr/bin/phpize5.6 && update-alternatives --set php-config /usr/bin/php-config5.6 && printf \"${auto_answer}\" | pecl -d preferred_state=${preferred_state} install ${name}${new_version} && pecl info ${name}",
+          absent  => "pecl uninstall -n ${name}",
+        }
       }
 
       $pecl_exec_unless = $ensure ? {
