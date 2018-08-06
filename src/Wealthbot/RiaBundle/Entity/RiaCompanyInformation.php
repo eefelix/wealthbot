@@ -519,7 +519,7 @@ class RiaCompanyInformation
         }
 
         if (!is_dir($this->getUploadRootDir())) {
-            mkdir($this->getUploadRootDir());
+            mkdir($this->getUploadRootDir(), 0777, true);
         }
 
         $image = new \Imagick($this->logo_file->getPathname());
