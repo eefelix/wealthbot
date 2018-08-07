@@ -11,12 +11,13 @@ parameters:
     mongodb_user: webo
     mongodb_password: password
 
-    mailer_transport:  smtp
+    mailer_transport: smtp
     mailer_host: smtp.gmail.com
     mailer_user: wealthbot2018@gmail.com
     mailer_password: weboDemo32
-    mailer_encryption: tls
+    mailer_encryption: ssl
     mailer_port: 465
+
     locale:            en
     secret:            EA155B775CYU8E27997E385A5E4F8349SECRET
 
