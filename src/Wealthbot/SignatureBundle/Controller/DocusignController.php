@@ -28,16 +28,16 @@ use Wealthbot\UserBundle\Entity\Document;
 class DocusignController extends BaseSign
 {
     /** @var \Wealthbot\SignatureBundle\Docusign\DocusignSessionPersistence */
-    private $api;
+    protected $api;
 
     /** @var \Wealthbot\SignatureBundle\Manager\DocumentSignatureManager */
-    private $signatureManager;
+    protected $signatureManager;
 
     /** @var  ElectronicSignatureService */
-    private $electronicSignature;
+    protected $electronicSignature;
 
     /** @var EntityManager */
-    private $em;
+    protected $em;
 
     public function signAction($signature_id)
     {
