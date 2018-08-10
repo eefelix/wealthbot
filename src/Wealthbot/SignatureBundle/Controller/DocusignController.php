@@ -282,7 +282,7 @@ class DocusignController extends BaseSign
                 $path = $this->container->getParameter('uploads_dir').'/tmp';
 
                 if (!is_dir($path)) {
-                    mkdir($path);
+                    mkdir($path, 0777, true);
                 }
 
                 $path .= '/'.$filename;

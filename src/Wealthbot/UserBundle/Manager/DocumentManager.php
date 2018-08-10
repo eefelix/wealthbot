@@ -215,7 +215,7 @@ class DocumentManager
                 $this->removeDir($tmpDir);
             }
 
-            mkdir($tmpDir);
+            mkdir($tmpDir, 0777, true);
 
             $files = [];
 

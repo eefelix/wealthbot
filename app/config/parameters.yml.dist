@@ -37,14 +37,13 @@ parameters:
     docusign_password:       weboDemo32
     docusign_integrator_key:  f441cabd-594c-409e-9d84-c5856d891188
     docusign_personal_account:               af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_ira_account:                    af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_electronic_funds_transfer_form: af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_account_transfer_form:          af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_check_request:                  af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_wire_instructions:              af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_ira_distribution_form:          af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-    docusign_beneficiary_designation_form:   af8d5110-5465-4c9d-8f5a-70a4b817b3c3
-
+    docusign_ira_account:                    1634b9e1-93b3-4a93-8a80-1ce16a94ec25
+    docusign_electronic_funds_transfer_form: a99a4b2a-a609-4b7f-b25f-96e7544e4ae6
+    docusign_account_transfer_form:          a366b703-c414-40ba-bc6e-f528dc6b3a41
+    docusign_check_request:                  b62c1576-77e5-4327-8138-9abb7ff487a5
+    docusign_wire_instructions:              31f15209-1b84-4282-b359-9bdf5a776fd9
+    docusign_ira_distribution_form:          c67afce6-e8aa-45a9-b4eb-a3dab3023eaa
+    docusign_beneficiary_designation_form:   96100468-3686-4d4d-a203-95f30fb6ae4d
 
     # For dev.wealthbot.io
     docusign_brand_id: f3a437dc-d2b2-4dc6-877f-0f62190cb3d7

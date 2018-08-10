@@ -25,7 +25,7 @@ class AdvisorCodeEventListener
         $filename = self::getIncomingFilesLocation().$advisorCode->getName();
 
         if (!$this->fs->exists($filename)) {
-            $this->fs->mkdir($filename, 0777);
+            $this->fs->mkdir($filename, 0777, true);
         }
     }
 
