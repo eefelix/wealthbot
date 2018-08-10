@@ -58,3 +58,6 @@ app/console assetic:dump
 echo .... warming up cache ....
 #app/console cache:warmup --env=prod
 app/console cache:warmup --env=dev
+
+#install the assets
+app/console assets:install --symlink web
